@@ -6,8 +6,8 @@ if (Meteor.isClient) {
 
     Meteor.autorun(function() {
         Template.display.rendered = function() {
-            console.log('rendering display');
             positionContacts();
+            changeNavToType();
         },
 
         Template.critique.subject = function() {
@@ -17,8 +17,12 @@ if (Meteor.isClient) {
         },
 
         window.onresize = function(event) {
-            console.log('window resizing');
             positionContacts();
+        },
+
+        changeNavToType = function(ty) {
+            $('li').not('.active').not('.' + ty).hide();
+            $('li.' + ty).show();
         }
     });
 }

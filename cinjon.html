@@ -20,6 +20,7 @@
     margin-bottom:35px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     letter-spacing:2px;
+    padding-top:20px;
     }
     .navTitle {
     margin-bottom:10px
@@ -28,12 +29,13 @@
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     }
     #navigation {
+    min-width:225px;
     margin-left:10px;
     }
     #main {
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       letter-spacing: 2px;
-      font-size:17px
+      font-size:17px;
     }
     .prettyprint {
     border: 3px solid rgba(182, 140, 31, 0.15);
@@ -87,9 +89,10 @@
 <body>
   <div class="container-fluid">
     <div id="topBar">
-      <span>Cinjon</span>
+      <span style="font-size:23px">Cinjon</span>
       <span id="contacts">
         <span>
+
           <a href="mailto:cinjon.resnick@gmail.com?subject=Thanks for the message">Email</a>
         </span>
         <span style="margin-left:20px">
@@ -99,13 +102,13 @@
     </div>
     <div class="row-fluid">
 
-      <div class="tabbable" id="navigation">
+      <div class="tabbable" style="margin-left:10px">
         <ul class="nav nav-pills nav-stacked span3" id="navigation">
           {{> mainNavigation}}
           <hr>
-          {{> writingNavigation}}
-          <hr>
           {{> projectNavigation}}
+          <hr>
+          {{> writingNavigation}}
         </ul>
         <div class="tab-content span8" id="main">
             {{> display}}
@@ -119,7 +122,7 @@
 <template name="display">
   <div id="tabsNav-main1" class="tab-pane active">
     <div contenteditable="false" class="prettyprint">
-      {{> listenquote}}
+      {{> welcome}}
     </div>
   </div>
   <div id="tabsNav-writing1" class="tab-pane">
@@ -173,43 +176,43 @@
 </template>
 
 <template name="mainNavigation">
-  <p class="navTitle"><strong>he says hello</strong></p>
+  <a href="#" class="navTitle" onclick="changeNavToType('main')"><p class="navTitle"><strong>he says hello</strong></p></a>
   <li class="active">
-    <a href="#tabsNav-main1" data-toggle="tab">Listen</a>
+    <a href="#tabsNav-main1" data-toggle="tab">Welcome</a>
   </li>
 </template>
 
 <template name="writingNavigation">
-  <p class="navTitle"><strong>you fool</strong></p>
-  <li>
+  <a href="#" onclick="changeNavToType('writing')"><p><strong>i love you</strong></p></a>
+  <li class="writing">
     <a href="#tabsNav-writing1" data-toggle="tab">About A Boy</a>
   </li>
-  <li>
+  <li class="writing">
     <a href="#tabsNav-writing2" data-toggle="tab">The New England Experiment</a>
   </li>
-  <li>
+  <li class="writing">
     <a href="#tabsNav-writing3" data-toggle="tab">JellyBean</a>
   </li>
-  <li>
+  <li class="writing">
     <a href="#tabsNav-writing4" data-toggle="tab">At Peace</a>
   </li>
 </template>
 
 <template name="projectNavigation">
-  <p class="navTitle"><strong>i love you</strong></p>
-  <li>
+  <a class="navTitle" href="#" onclick="changeNavToType('project')"><p><strong>you fool</strong></p></a>
+  <li class="project">
     <a href="#tabsNav-project1" data-toggle="tab">EchoDrum</a>
   </li>
-  <li>
+  <li class="project">
     <a href="#tabsNav-project2" data-toggle="tab">Kaizen</a>
   </li>
-  <li>
+  <li class="project">
     <a href="#tabsNav-project3" data-toggle="tab">BeatBelt</a>
   </li>
-  <li>
+  <li class="project">
     <a href="#tabsNav-project4" data-toggle="tab">SocialTreat</a>
   </li>
-  <li>
+  <li class="project">
     <a href="#tabsNav-project5" data-toggle="tab">Celtics Simulator</a>
   </li>
 </template>
