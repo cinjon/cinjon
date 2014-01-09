@@ -12,16 +12,6 @@
 
   </script>
   <style>
-    .navTitle {
-    margin-bottom:10px
-    }
-    .navigation {
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    }
-    #navigation {
-    min-width:225px;
-    margin-left:10px;
-    }
     #main {
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       letter-spacing: 2px;
@@ -57,16 +47,8 @@
     margin-right:90px;
     margin-top:100px;
     }
-    .container .quoteContainer {
-    margin-left:90px;
-    margin-right:90px;
-    margin-top:60px;
-    }
     hr {
     border-top:3px solid rgba(182, 140, 31, 0.15);
-    }
-    .title {
-    margin-bottom:10px
     }
     .messageMe {
     margin-top:20px;
@@ -77,25 +59,16 @@
     color:#FF6633;
     }
     #topBar {
-    -webkit-border-radius: 4px;
-    border-color: rgba(229, 103, 23, 0.8);
-    margin-left:20px;
     margin-top:15px;
     margin-bottom:35px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    letter-spacing:2px;
     padding-top:20px;
     }
-
   <title>Cinjon</title>
 </head>
 
 <body>
   <div class="container">
-    <div id="topBar">
-      <div style="display:none">
-      </div>
-    </div>
+    <div id="topBar" />
     <div class="row">
       <div class="tabbable" style="margin-left:10px">
         {{> writingNavigation}}
@@ -166,6 +139,11 @@
       {{> celtics}}
     </div>
   </div>
+  <div id="tabsNav-project6" class="tab-pane">
+    <div contenteditable="false" class="prettyprint padded">
+      {{> dome}}
+    </div>
+  </div>
 </template>
 
 <template name="mainNavigation">
@@ -195,6 +173,9 @@
 <template name="projectNavigation">
   <ul class="nav nav-pills nav-stacked span2 ulNav" id="projectUL">
     {{> mainNavigation}}
+    <li class="project">
+      <a href="#tabsNav-project6" data-toggle="tab">Hammock Forrest</a>
+    </li>
     <li class="project">
       <a href="#tabsNav-project1" data-toggle="tab">EchoDrum</a>
     </li>

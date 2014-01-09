@@ -69,10 +69,6 @@ if (Meteor.isClient) {
             var str = "mailto:cinjon.resnick@gmail.com?subject="
             var activeLI = $("li.active");
             return str + activeLI.children().text();
-        },
-
-        window.onresize = function(event) {
-            positionContacts();
         }
     });
 }
