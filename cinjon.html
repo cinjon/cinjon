@@ -22,6 +22,7 @@
     background-color: rgba(245, 245, 245, 0);
     overflow:auto;
     height:485px;
+    line-height:22px;
     }
     .padded {
     padding:30px;
@@ -114,6 +115,12 @@
     </div>
     {{> critique}}
   </div>
+  <div id="tabsNav-writing5" class="tab-pane">
+    <div contenteditable="false" class="prettyprint padded">
+      {{> youryou}}
+    </div>
+    {{> critique}}
+  </div>
   <div id="tabsNav-project1" class="tab-pane">
     <div contenteditable="false" class="prettyprint padded">
       {{> echodrum}}
@@ -166,6 +173,9 @@
     </li>
     <li class="writing">
       <a href="#tabsNav-writing4" data-toggle="tab">At Peace</a>
+    </li>
+    <li class="writing">
+      <a href="#tabsNav-writing5" data-toggle="tab">Your You</a>
     </li>
   </ul>
 </template>
