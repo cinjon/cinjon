@@ -12,16 +12,6 @@
 
   </script>
   <style>
-    #topBar {
-    -webkit-border-radius: 4px;
-    border-color: rgba(229, 103, 23, 0.8);
-    margin-left:20px;
-    margin-top:15px;
-    margin-bottom:35px;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    letter-spacing:2px;
-    padding-top:20px;
-    }
     .navTitle {
     margin-bottom:10px
     }
@@ -61,13 +51,13 @@
     background-color:rgba(204, 106, 0, 0.03);
     color:#111355;
     }
-    .container-fluid .workContainer {
+    .container .workContainer {
     width:inherit;
     margin-left:90px;
     margin-right:90px;
-    margin-top:120px;
+    margin-top:100px;
     }
-    .container-fluid .quoteContainer {
+    .container .quoteContainer {
     margin-left:90px;
     margin-right:90px;
     margin-top:60px;
@@ -83,38 +73,41 @@
     font-size:12px;
     letter-spacing:1px;
     }
+    .keyword {
+    color:#FF6633;
+    }
+    #topBar {
+    -webkit-border-radius: 4px;
+    border-color: rgba(229, 103, 23, 0.8);
+    margin-left:20px;
+    margin-top:15px;
+    margin-bottom:35px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing:2px;
+    padding-top:20px;
+    }
+
   <title>Cinjon</title>
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div id="topBar">
-      <span style="font-size:23px">Cinjon</span>
-      <span id="contacts">
-        <span>
-
-          <a href="mailto:cinjon.resnick@gmail.com?subject=Thanks for the message">Email</a>
-        </span>
-        <span style="margin-left:20px">
-          <a href="http://www.linkedin.com/in/cinjonresnick">LinkedIn</a>
-        </span>
-      </span>
+      <div style="display:none">
+      </div>
     </div>
-    <div class="row-fluid">
-
+    <div class="row">
       <div class="tabbable" style="margin-left:10px">
-        <ul class="nav nav-pills nav-stacked span3" id="navigation">
-          {{> mainNavigation}}
-          <hr>
-          {{> projectNavigation}}
-          <hr>
-          {{> writingNavigation}}
-        </ul>
+        {{> writingNavigation}}
+        {{> projectNavigation}}
+        <div class="span2" id="fakeUL" />
         <div class="tab-content span8" id="main">
             {{> display}}
         </div>
       </div>
-
+    </div>
+    <div class="row">
+      <div class="span8 offset2" id="hoverText" style="display:none; padding-left:10px; color: #AAA;" />
     </div>
   </div>
 </body>
@@ -176,45 +169,48 @@
 </template>
 
 <template name="mainNavigation">
-  <a href="#" class="navTitle" onclick="changeNavToType('main')"><p class="navTitle"><strong>he says hello</strong></p></a>
   <li class="active">
     <a href="#tabsNav-main1" data-toggle="tab">Welcome</a>
   </li>
 </template>
 
 <template name="writingNavigation">
-  <a href="#" onclick="changeNavToType('writing')"><p><strong>i love you</strong></p></a>
-  <li class="writing">
-    <a href="#tabsNav-writing1" data-toggle="tab">About A Boy</a>
-  </li>
-  <li class="writing">
-    <a href="#tabsNav-writing2" data-toggle="tab">The New England Experiment</a>
-  </li>
-  <li class="writing">
-    <a href="#tabsNav-writing3" data-toggle="tab">JellyBean</a>
-  </li>
-  <li class="writing">
-    <a href="#tabsNav-writing4" data-toggle="tab">At Peace</a>
-  </li>
+  <ul class="nav nav-pills nav-stacked span2 ulNav" id="writingUL">
+    {{> mainNavigation}}
+    <li class="writing">
+      <a href="#tabsNav-writing1" data-toggle="tab">About A Boy</a>
+    </li>
+    <li class="writing">
+      <a href="#tabsNav-writing2" data-toggle="tab">The New England Experiment</a>
+    </li>
+    <li class="writing">
+      <a href="#tabsNav-writing3" data-toggle="tab">JellyBean</a>
+    </li>
+    <li class="writing">
+      <a href="#tabsNav-writing4" data-toggle="tab">At Peace</a>
+    </li>
+  </ul>
 </template>
 
 <template name="projectNavigation">
-  <a class="navTitle" href="#" onclick="changeNavToType('project')"><p><strong>you fool</strong></p></a>
-  <li class="project">
-    <a href="#tabsNav-project1" data-toggle="tab">EchoDrum</a>
-  </li>
-  <li class="project">
-    <a href="#tabsNav-project2" data-toggle="tab">Kaizen</a>
-  </li>
-  <li class="project">
-    <a href="#tabsNav-project3" data-toggle="tab">BeatBelt</a>
-  </li>
-  <li class="project">
-    <a href="#tabsNav-project4" data-toggle="tab">SocialTreat</a>
-  </li>
-  <li class="project">
-    <a href="#tabsNav-project5" data-toggle="tab">Celtics Simulator</a>
-  </li>
+  <ul class="nav nav-pills nav-stacked span2 ulNav" id="projectUL">
+    {{> mainNavigation}}
+    <li class="project">
+      <a href="#tabsNav-project1" data-toggle="tab">EchoDrum</a>
+    </li>
+    <li class="project">
+      <a href="#tabsNav-project2" data-toggle="tab">Kaizen</a>
+    </li>
+    <li class="project">
+      <a href="#tabsNav-project3" data-toggle="tab">BeatBelt</a>
+    </li>
+    <li class="project">
+      <a href="#tabsNav-project4" data-toggle="tab">SocialTreat</a>
+    </li>
+    <li class="project">
+      <a href="#tabsNav-project5" data-toggle="tab">Celtics Simulator</a>
+    </li>
+  </ul>
 </template>
 
 <template name="critique">
